@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bluetoothSearch"
+        android:title="@string/search"
+        android:icon="@drawable/ic_baseline_bluetooth_connected_24"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/bluetoothConnect"
+        android:title="@string/connect"
+        android:icon="@drawable/ic_baseline_connect_without_contact_24"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/bluetoothPair"
+        android:title="@string/pair"
+        android:icon="@drawable/ic_baseline_eject_24"
+        app:showAsAction="ifRoom"/>
+</menu>

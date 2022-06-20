@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BluetoothTry</string>
+    <string name="enter_your_message">Enter your message</string>
+    <string name="send">Send</string>
+    <string name="connect">Connect</string>
+    <string name="search">Search</string>
+    <string name="pairedDV">Paired Devices</string>
+    <string name="status">Status:</string>
+    <string name="pair">Pair</string>
+</resources>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/statusTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/pairedDevicesCV"
+                app:layout_constraintEnd_toStartOf="@id/statusSymbol"
+                android:text="@string/status"
+                android:layout_margin="10dp"
+                android:textColor="@color/black"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/statusSymbol"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/statusTV"
+                app:layout_constraintBottom_toBottomOf="@id/statusTV"
+                app:cardElevation="40dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/teal_200"
+                app:cardCornerRadius="50dp"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pairedDevicesCV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/statusTV"
+                app:layout_constraintBottom_toTopOf="@id/deviceListCV"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="40dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/pairedDVTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="@string/pairedDV"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textColor="@color/black"
+                        android:layout_margin="5dp"
+                        android:textSize="20sp"/>
+                    <ListView
+                        android:id="@+id/pairedDevicesLV"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pairedDVTV"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="NestedScrolling" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/deviceListCV"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                app:layout_constraintTop_toBottomOf="@id/pairedDevicesCV"
+                app:layout_constraintBottom_toTopOf="@id/msgCL"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="40dp"
+                app:cardCornerRadius="40dp"
+                android:layout_margin="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ListView
+                        android:id="@+id/deviceLV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_margin="10dp"
+                        tools:ignore="NestedScrolling" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/msgCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deviceListCV"
+                android:layout_margin="10dp">
+
+                <EditText
+                    android:id="@+id/msgEDT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/msgCL"
+                    app:layout_constraintTop_toTopOf="@id/msgCL"
+                    app:layout_constraintBottom_toBottomOf="@id/msgCL"
+                    app:layout_constraintEnd_toStartOf="@id/sendBTN"
+                    android:hint="@string/enter_your_message"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"/>
+
+                <Button
+                    android:id="@+id/sendBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/msgEDT"
+                    android:text="@string/send"
+                    app:layout_constraintEnd_toEndOf="@id/msgCL"
+                    app:layout_constraintTop_toTopOf="@id/msgCL"
+                    app:layout_constraintBottom_toBottomOf="@id/msgCL"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
